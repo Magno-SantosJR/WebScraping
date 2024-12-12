@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resultados da Busca</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
+    <style>
+        body {
+            background-color: #4486c9;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding-top: 50px;
+            height: 100vh;
+        }
+        .container {
+            background: #fff;
+            width: 600px;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+
+</head>
+<body>
+    <div class="container">
+        <h1 class="text-center">Resultados da Busca</h1>
+        <h3><strong>Termo de busca:</strong> {{ search_term }}</h3>
+
+        <h3>Detalhes:</h3>
+        <div>
+            {% for item in texts %}
+                <p>{{ item }}</p>
+            {% endfor %}
+        </div>
+
+        <a href="/download/{{ pdf_path }}" class="btn btn-primary mt-3">Baixar PDF com os resultados</a>
+    </div>
+</body>
+</html>
